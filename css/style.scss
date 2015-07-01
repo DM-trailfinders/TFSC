@@ -1,0 +1,518 @@
+// VAIRABLES:
+
+// 01. ALL BRANDING COLORS
+
+	// All shades of green (from darker to lighter):
+	$c-green-01: #5d654d; 
+	$c-green-02: #878e6e; 
+	$c-green-03: #a5a983; 
+	$c-green-04: #cfcfba;
+	$c-green-05: #a7ac9f;
+
+	//  Other color:
+	$c-white-01: #ffffff;
+	$c-orange-01: #fcb034;
+
+
+// 02. TYPOGRAPHY 
+	$s-font-01: 16px;
+	$font-stack: 'Open Sans', Verdana, Arial, sans-serif;
+
+
+// 03. IMAGES
+	$baseUrl: "../images/";
+
+
+
+
+//MIXINS:
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+*,
+*:after,
+*:before{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+	min-height: 100%;
+}
+
+body{
+	font-size: 100%;
+	font-family: $font-stack;
+    background: {
+    	color: $c-white-01;
+        image: url("#{$baseUrl}body-bg.png");
+        repeat: no-repeat;
+        position: 50% 0;
+        size: cover;
+        attachment: fixed;
+    }
+}
+
+a{
+	text-decoration: none;
+	font-size: $s-font-01;
+	color: inherit;
+
+	&:hover, &:visited, &:active, &:focus{
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+h1,h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-stack;;
+  color: inherit;
+}
+
+
+
+
+
+
+img{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+/*************************************************************
+Global Classes for UI Elements:
+*************************************************************/
+
+
+/***************************************** Basic List Group */
+.list-group{
+	list-style: none;
+	margin-bottom: 30px;
+
+	li.list-group-item{
+		border: 0;
+		background-color: transparent;
+		padding: 10px 0;
+	}
+}
+
+
+
+
+
+/*************************************************************
+Global UI Elements:
+
+01 - Heaader
+02 - Navigation
+03 - Main
+04 - Footer
+*************************************************************/
+
+
+/********************************************* 01 - Heaader */
+
+header[role="banner"] {
+	color: $c-white-01;
+	height: auto;
+	background-color: $c-green-02;
+	@include border-radius(15px 15px 0 0);
+	padding: 15px 45px;
+	margin-top: 30px;
+
+	[class*="col-"]{
+		padding: 0;
+	}
+
+	a{
+		color: inherit;
+	}
+
+	a#main-logo{
+		display: block;
+	
+		> img{
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.contact-box{
+		text-align: right;
+		padding: 15px 0;
+
+		.tel{
+			font-size: $s-font-01*2.125;
+			font-weight: 600;
+			line-height: $s-font-01*2.125;
+		}
+
+	.email{
+		font-size: $s-font-01*1.5625;
+		font-weight: 300;
+
+		a{
+			line-height: $s-font-01*1.5625;
+			font-size: inherit;
+
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+
+	}
+
+}
+
+@media (max-width: 767px) {
+
+  header[role="banner"]{
+  	@include border-radius(0);
+  	margin-top: 0px;
+  }
+
+}
+
+
+/****************************************** 02 - Navigation */
+
+nav[role="navigation"]{
+	padding: 0;
+	margin-bottom: 0;
+
+
+	.navbar-collapse{
+		padding: 0;
+	}
+
+	> .navbar-header, 
+	> .navbar-header, 
+	> .navbar-collapse, 
+	> .navbar-collapse{
+		margin: 0;
+	}
+
+	.navbar-nav{
+		margin: 0 auto;
+	}
+
+	.navbar-collapse{
+		border-top: 0;
+		box-shadow: none;
+	}
+}
+
+@media (min-width: 768px){
+
+	.navbar-nav{
+		display: table;
+		width: 100%;
+
+		>li {
+			display: table-cell;
+			text-align: center;
+			float: none;
+		}
+	}
+
+	.nav > li > a{
+		padding: 15px 0;
+	}
+
+}
+
+	nav.navbar{
+		border-radius: 0;
+		border-width: 0; //Remove the border around the main navigation
+	}
+
+	 
+
+	nav.navbar-default{
+		background-color: $c-green-01;
+		border-color: $c-green-05;
+
+		.navbar-nav > li > a{
+			color: $c-white-01;
+			text-transform: uppercase;
+			border-right: 1px solid $c-green-05;
+
+			&:hover{
+				color:$c-orange-01;
+			}
+		}
+
+		.navbar-nav > li:last-child > a{
+			border-right: 0;
+		}
+
+		.navbar-nav > .open > a, 
+		.navbar-nav > .open > a:hover, 
+		.navbar-nav > .open > a:focus{
+			color: $c-green-05;
+			border-color: $c-green-05;
+			background-color: $c-green-01;
+		}
+
+		.navbar-toggle{
+			border-color: $c-green-05;
+			@include border-radius(0);
+
+				&:hover{
+					background-color: $c-green-05;
+				}
+				&:focus{
+					background-color: $c-green-05;
+				}
+
+			.icon-bar{
+				background-color: $c-white-01;
+			}
+		}
+
+	}
+
+	@media (min-width: 768px){
+		nav.navbar-default{
+			.navbar-nav > li > a{
+				font-size: $s-font-01/1.333;
+			}
+		}
+	}
+
+	@media (min-width: 992px){
+		nav.navbar-default{
+			.navbar-nav > li > a{
+				font-size: $s-font-01/1.14;
+			}
+		}
+	}
+
+	@media (min-width: 1200px) {
+	  nav.navbar-default{
+			.navbar-nav > li > a{
+				font-size: $s-font-01;
+			}
+		}
+	}
+
+	.dropdown-menu{
+		background-color: $c-green-04;
+		padding: 0 10px;
+		margin: 0;
+		@include border-radius(0);
+		border-color: $c-green-05;
+		box-shadow: none;
+		left: -1px;
+		border-width: 0; //Remove the border around the dropdown menu
+
+		.divider{
+			margin: 0;
+			background-color: $c-green-01;
+		}
+
+		li > a{
+			color: $c-green-01;
+			text-transform: uppercase;
+			padding: 10px;
+
+			&:hover{
+				color: $c-white-01;
+				background-color: transparent;
+			}
+		}
+	}
+
+	@media (max-width: 767px){
+		.navbar-nav .open{
+			.dropdown-menu{
+				padding: 0 15px;
+				background-color: $c-green-04;
+
+				> li > a{
+					padding: 10px 0;
+				}
+			}
+		}
+
+		nav.navbar-default {
+			border-color: $c-green-01;
+
+			.navbar-nav > li > a{
+				border-right: 0;
+			}
+		}
+	}
+
+
+/************************************************ 03 - Main */
+
+main[role="main"]{
+	min-height: 500px;
+	background-color: $c-white-01;
+	padding: 30px 15px;
+}
+
+
+
+
+/********************************************** 04 - Footer */
+
+footer[role="contentinfo"]{
+	color: $c-white-01;
+	background-color: $c-green-03;
+	margin-bottom: 30px;
+	padding: 15px 15px 0 15px;
+
+	.list-group{
+
+		li.list-group-item{
+			padding: 2px 0;
+
+			> a{
+				font-size: $s-font-01/1.333;
+			}
+		}
+	}
+
+	h6{
+		font-size: $s-font-01;
+	}
+
+	p{
+		margin: 0;
+	}
+
+	a{
+		&:hover{
+			color: $c-green-01;
+		}
+	}
+
+	#sub-footer{
+		font-size: $s-font-01/1.333;
+		background-color: $c-green-02;
+		padding: 10px 0;
+		margin-top: 15px;
+
+		.contact-box{
+			text-align: right;
+
+			.tel{
+				line-height: $s-font-01;
+			}
+
+			.email{
+				margin-left: 20px;
+
+				a{
+					font-size: inherit;
+				}
+			}
+
+		}
+	}
+
+	#accordion .panel {
+		border:none; 
+	    box-shadow:none;
+	    background-color: transparent;
+
+	    .m-heading{
+	    	background-color: $c-green-01;
+	    	padding: 0;
+	 		
+	 		h6{
+	 			padding: 15px;
+	 			margin: 0;
+	 			cursor: pointer;
+	 		}
+	    }
+	}
+
+	.div-collapse {
+		overflow-x: visible;
+		-webkit-overflow-scrolling: touch;
+		border-top: 0;
+		box-shadow: none;
+		
+	}
+}
+
+@media (max-width: 767px) {
+
+	footer[role="contentinfo"]{
+		text-align: center;
+		margin-bottom: 0px;
+
+		#sub-footer{
+			padding: 20px 0;
+		}
+
+		.list-group{
+			margin-bottom: 0;
+
+			li.list-group-item{
+				padding: 10px 0!important;
+
+				> a{
+					font-size: $s-font-01;
+					color: $c-green-01;
+				}
+			}
+		}
+
+		#accordion{
+			margin: 20px 15px;
+			.div-collapse{
+				background-color: $c-green-04;
+			}
+		}
+	}	
+
+}
+
+@media (min-width: 768px) {
+
+	.div-collapse.collapse {
+		display: block !important;
+		height: auto !important;
+		overflow: visible !important;
+	}
+
+}
+
+@media (max-width: 1200px){
+	footer[role="contentinfo"]{
+
+		#sub-footer{
+			text-align: center;
+
+			.contact-box{
+				text-align: center;
+
+				.email{
+					margin-left: 10px;
+				}
+			}
+		}	
+	}
+}
+
+
+
+
+

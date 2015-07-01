@@ -1,0 +1,452 @@
+/* line 39, style.scss */
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 48, style.scss */
+html {
+  min-height: 100%;
+}
+
+/* line 52, style.scss */
+body {
+  font-size: 100%;
+  font-family: "Open Sans", Verdana, Arial, sans-serif;
+  background-color: white;
+  background-image: url("../images/body-bg.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* line 65, style.scss */
+a {
+  text-decoration: none;
+  font-size: 16px;
+  color: inherit;
+}
+/* line 70, style.scss */
+a:hover, a:visited, a:active, a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 77, style.scss */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Open Sans", Verdana, Arial, sans-serif;
+  color: inherit;
+}
+
+/* line 87, style.scss */
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/*************************************************************
+Global Classes for UI Elements:
+*************************************************************/
+/***************************************** Basic List Group */
+/* line 99, style.scss */
+.list-group {
+  list-style: none;
+  margin-bottom: 30px;
+}
+/* line 103, style.scss */
+.list-group li.list-group-item {
+  border: 0;
+  background-color: transparent;
+  padding: 10px 0;
+}
+
+/*************************************************************
+Global UI Elements:
+
+01 - Heaader
+02 - Navigation
+03 - Main
+04 - Footer
+*************************************************************/
+/********************************************* 01 - Heaader */
+/* line 126, style.scss */
+header[role="banner"] {
+  color: white;
+  height: auto;
+  background-color: #878e6e;
+  -webkit-border-radius: 15px 15px 0 0;
+  -moz-border-radius: 15px 15px 0 0;
+  -ms-border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 45px;
+  margin-top: 30px;
+}
+/* line 134, style.scss */
+header[role="banner"] [class*="col-"] {
+  padding: 0;
+}
+/* line 138, style.scss */
+header[role="banner"] a {
+  color: inherit;
+}
+/* line 142, style.scss */
+header[role="banner"] a#main-logo {
+  display: block;
+}
+/* line 145, style.scss */
+header[role="banner"] a#main-logo > img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+/* line 152, style.scss */
+header[role="banner"] .contact-box {
+  text-align: right;
+  padding: 15px 0;
+}
+/* line 156, style.scss */
+header[role="banner"] .contact-box .tel {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 34px;
+}
+/* line 162, style.scss */
+header[role="banner"] .contact-box .email {
+  font-size: 25px;
+  font-weight: 300;
+}
+/* line 166, style.scss */
+header[role="banner"] .contact-box .email a {
+  line-height: 25px;
+  font-size: inherit;
+}
+/* line 170, style.scss */
+header[role="banner"] .contact-box .email a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  /* line 182, style.scss */
+  header[role="banner"] {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    margin-top: 0px;
+  }
+}
+/****************************************** 02 - Navigation */
+/* line 192, style.scss */
+nav[role="navigation"] {
+  padding: 0;
+  margin-bottom: 0;
+}
+/* line 197, style.scss */
+nav[role="navigation"] .navbar-collapse {
+  padding: 0;
+}
+/* line 204, style.scss */
+nav[role="navigation"] > .navbar-header,
+nav[role="navigation"] > .navbar-header,
+nav[role="navigation"] > .navbar-collapse,
+nav[role="navigation"] > .navbar-collapse {
+  margin: 0;
+}
+/* line 208, style.scss */
+nav[role="navigation"] .navbar-nav {
+  margin: 0 auto;
+}
+/* line 212, style.scss */
+nav[role="navigation"] .navbar-collapse {
+  border-top: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  /* line 220, style.scss */
+  .navbar-nav {
+    display: table;
+    width: 100%;
+  }
+  /* line 224, style.scss */
+  .navbar-nav > li {
+    display: table-cell;
+    text-align: center;
+    float: none;
+  }
+
+  /* line 231, style.scss */
+  .nav > li > a {
+    padding: 15px 0;
+  }
+}
+/* line 237, style.scss */
+nav.navbar {
+  border-radius: 0;
+  border-width: 0;
+}
+
+/* line 244, style.scss */
+nav.navbar-default {
+  background-color: #5d654d;
+  border-color: #a7ac9f;
+}
+/* line 248, style.scss */
+nav.navbar-default .navbar-nav > li > a {
+  color: white;
+  text-transform: uppercase;
+  border-right: 1px solid #a7ac9f;
+}
+/* line 253, style.scss */
+nav.navbar-default .navbar-nav > li > a:hover {
+  color: #fcb034;
+}
+/* line 258, style.scss */
+nav.navbar-default .navbar-nav > li:last-child > a {
+  border-right: 0;
+}
+/* line 264, style.scss */
+nav.navbar-default .navbar-nav > .open > a,
+nav.navbar-default .navbar-nav > .open > a:hover,
+nav.navbar-default .navbar-nav > .open > a:focus {
+  color: #a7ac9f;
+  border-color: #a7ac9f;
+  background-color: #5d654d;
+}
+/* line 270, style.scss */
+nav.navbar-default .navbar-toggle {
+  border-color: #a7ac9f;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+/* line 274, style.scss */
+nav.navbar-default .navbar-toggle:hover {
+  background-color: #a7ac9f;
+}
+/* line 277, style.scss */
+nav.navbar-default .navbar-toggle:focus {
+  background-color: #a7ac9f;
+}
+/* line 281, style.scss */
+nav.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  /* line 290, style.scss */
+  nav.navbar-default .navbar-nav > li > a {
+    font-size: 12.003px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 298, style.scss */
+  nav.navbar-default .navbar-nav > li > a {
+    font-size: 14.03509px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 306, style.scss */
+  nav.navbar-default .navbar-nav > li > a {
+    font-size: 16px;
+  }
+}
+/* line 312, style.scss */
+.dropdown-menu {
+  background-color: #cfcfba;
+  padding: 0 10px;
+  margin: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  border-color: #a7ac9f;
+  box-shadow: none;
+  left: -1px;
+  border-width: 0;
+}
+/* line 322, style.scss */
+.dropdown-menu .divider {
+  margin: 0;
+  background-color: #5d654d;
+}
+/* line 327, style.scss */
+.dropdown-menu li > a {
+  color: #5d654d;
+  text-transform: uppercase;
+  padding: 10px;
+}
+/* line 332, style.scss */
+.dropdown-menu li > a:hover {
+  color: white;
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  /* line 341, style.scss */
+  .navbar-nav .open .dropdown-menu {
+    padding: 0 15px;
+    background-color: #cfcfba;
+  }
+  /* line 345, style.scss */
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding: 10px 0;
+  }
+
+  /* line 351, style.scss */
+  nav.navbar-default {
+    border-color: #5d654d;
+  }
+  /* line 354, style.scss */
+  nav.navbar-default .navbar-nav > li > a {
+    border-right: 0;
+  }
+}
+/************************************************ 03 - Main */
+/* line 363, style.scss */
+main[role="main"] {
+  min-height: 500px;
+  background-color: white;
+  padding: 30px 15px;
+}
+
+/********************************************** 04 - Footer */
+/* line 374, style.scss */
+footer[role="contentinfo"] {
+  color: white;
+  background-color: #a5a983;
+  margin-bottom: 30px;
+  padding: 15px 15px 0 15px;
+}
+/* line 382, style.scss */
+footer[role="contentinfo"] .list-group li.list-group-item {
+  padding: 2px 0;
+}
+/* line 385, style.scss */
+footer[role="contentinfo"] .list-group li.list-group-item > a {
+  font-size: 12.003px;
+}
+/* line 391, style.scss */
+footer[role="contentinfo"] h6 {
+  font-size: 16px;
+}
+/* line 395, style.scss */
+footer[role="contentinfo"] p {
+  margin: 0;
+}
+/* line 400, style.scss */
+footer[role="contentinfo"] a:hover {
+  color: #5d654d;
+}
+/* line 405, style.scss */
+footer[role="contentinfo"] #sub-footer {
+  font-size: 12.003px;
+  background-color: #878e6e;
+  padding: 10px 0;
+  margin-top: 15px;
+}
+/* line 411, style.scss */
+footer[role="contentinfo"] #sub-footer .contact-box {
+  text-align: right;
+}
+/* line 414, style.scss */
+footer[role="contentinfo"] #sub-footer .contact-box .tel {
+  line-height: 16px;
+}
+/* line 418, style.scss */
+footer[role="contentinfo"] #sub-footer .contact-box .email {
+  margin-left: 20px;
+}
+/* line 421, style.scss */
+footer[role="contentinfo"] #sub-footer .contact-box .email a {
+  font-size: inherit;
+}
+/* line 429, style.scss */
+footer[role="contentinfo"] #accordion .panel {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+/* line 434, style.scss */
+footer[role="contentinfo"] #accordion .panel .m-heading {
+  background-color: #5d654d;
+  padding: 0;
+}
+/* line 438, style.scss */
+footer[role="contentinfo"] #accordion .panel .m-heading h6 {
+  padding: 15px;
+  margin: 0;
+  cursor: pointer;
+}
+/* line 446, style.scss */
+footer[role="contentinfo"] .div-collapse {
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  border-top: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  /* line 457, style.scss */
+  footer[role="contentinfo"] {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  /* line 461, style.scss */
+  footer[role="contentinfo"] #sub-footer {
+    padding: 20px 0;
+  }
+  /* line 465, style.scss */
+  footer[role="contentinfo"] .list-group {
+    margin-bottom: 0;
+  }
+  /* line 468, style.scss */
+  footer[role="contentinfo"] .list-group li.list-group-item {
+    padding: 10px 0!important;
+  }
+  /* line 471, style.scss */
+  footer[role="contentinfo"] .list-group li.list-group-item > a {
+    font-size: 16px;
+    color: #5d654d;
+  }
+  /* line 478, style.scss */
+  footer[role="contentinfo"] #accordion {
+    margin: 20px 15px;
+  }
+  /* line 480, style.scss */
+  footer[role="contentinfo"] #accordion .div-collapse {
+    background-color: #cfcfba;
+  }
+}
+@media (min-width: 768px) {
+  /* line 490, style.scss */
+  .div-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+@media (max-width: 1200px) {
+  /* line 501, style.scss */
+  footer[role="contentinfo"] #sub-footer {
+    text-align: center;
+  }
+  /* line 504, style.scss */
+  footer[role="contentinfo"] #sub-footer .contact-box {
+    text-align: center;
+  }
+  /* line 507, style.scss */
+  footer[role="contentinfo"] #sub-footer .contact-box .email {
+    margin-left: 10px;
+  }
+}
